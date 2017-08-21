@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821142401) do
+ActiveRecord::Schema.define(version: 20170821145249) do
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", limit: 100
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20170821142401) do
     t.string "phonenumber", limit: 20
     t.string "address", limit: 200
     t.datetime "create_day"
+    t.bigint "orders_id"
+    t.index ["orders_id"], name: "index_customers_on_orders_id"
   end
 
   create_table "detail_orders", primary_key: ["id_order", "id_product"], force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -37,6 +39,10 @@ ActiveRecord::Schema.define(version: 20170821142401) do
     t.integer "id_employee"
     t.datetime "day_order"
     t.datetime "day_recieve"
+    t.bigint "customers_id"
+    t.bigint "employees_id"
+    t.index ["customers_id"], name: "index_orders_on_customers_id"
+    t.index ["employees_id"], name: "index_orders_on_employees_id"
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -52,4 +58,7 @@ ActiveRecord::Schema.define(version: 20170821142401) do
     t.string "name", limit: 300
   end
 
+  add_foreign_key "customers", "orders", column: "orders_id"
+  add_foreign_key "orders", "customers", column: "customers_id"
+  add_foreign_key "orders", "employees", column: "employees_id"
 end

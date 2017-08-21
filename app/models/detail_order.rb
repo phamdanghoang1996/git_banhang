@@ -1,3 +1,0 @@
-class DetailOrder < ApplicationRecord
-  
-end
