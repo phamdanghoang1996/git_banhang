@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821145249) do
+ActiveRecord::Schema.define(version: 20170821172200) do
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", limit: 100
@@ -35,8 +35,6 @@ ActiveRecord::Schema.define(version: 20170821145249) do
   end
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "id_customer"
-    t.integer "id_employee"
     t.datetime "day_order"
     t.datetime "day_recieve"
     t.bigint "customers_id"
@@ -52,13 +50,18 @@ ActiveRecord::Schema.define(version: 20170821145249) do
     t.text "introduce"
     t.datetime "create_day"
     t.datetime "update_date"
+    t.bigint "typeproducts_id"
+    t.string "path_name", limit: 50
+    t.index ["typeproducts_id"], name: "index_products_on_typeproducts_id"
   end
 
   create_table "typeproducts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", limit: 300
+    t.string "path_name", limit: 50
   end
 
   add_foreign_key "customers", "orders", column: "orders_id"
   add_foreign_key "orders", "customers", column: "customers_id"
   add_foreign_key "orders", "employees", column: "employees_id"
+  add_foreign_key "products", "typeproducts", column: "typeproducts_id"
 end

@@ -1,8 +1,9 @@
+<%= render 'layouts/leftcontent' %>
 <div class="col-md-9" id="index">
   <div class="row">
     <% @products.each do |item| %>
       <div class="col-md-4">
-        <%= image_tag item.photo, alt: 'Hinh anh san pham', class:'img-responsive img-product' if item.photo %>
+
         <div class="text-center">
           <div style="height: 60px;">
             <p id="name-product"> <%= item.name %> </p>
@@ -17,7 +18,4 @@
       </div>
       <%end%>
     </div>
-</div>
-<div class="col-md-12 text-center">
-
 </div>

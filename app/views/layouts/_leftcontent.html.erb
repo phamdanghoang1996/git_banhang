@@ -1,3 +1,4 @@
+
 <div class="col-md-3">
   <div class="panel-default" id="filters_product">
     <div class="panel-heading">
@@ -6,21 +7,21 @@
     <div class="panel-body">
       <ul>
         <p>Giá sản phẩm</p>
-        <li><%=link_to 'Tăng dần', filters_path(:price=>'asc') %></li>
-        <li><%=link_to 'Giảm dần', filters_path(:price=>'desc') %></li>
-        <li><%=link_to 'Từ 50.000-100.000', filters_path(:fromprice=>'50000', :topprice=>'100000')%></li>
+        <li><%=link_to 'Tăng dần' %></li>
+        <li><%=link_to 'Giảm dần' %></li>
+        <li><%=link_to 'Từ 50.000-100.000'%></li>
       </ul>
       <ul>
         <p>Loại sản phẩm</p>
-        <li><%=link_to 'Đồ bóng đá', filters_path(:category=>'1') %></li>
-        <li><%=link_to 'Quần áo Yoga',filters_path(:category=>'2') %></li>
-        <li><%=link_to 'Tập gym', filters_path(:category=>'3') %></li>
-        <li><%=link_to 'Dụng cụ thể thao', filters_path(:category=>'4') %></li>
+        <li><%=link_to 'Đồ bóng đá' %></li>
+        <li><%=link_to 'Quần áo Yoga' %></li>
+        <li><%=link_to 'Tập gym' %></li>
+        <li><%=link_to 'Dụng cụ thể thao' %></li>
       </ul>
       <ul>
         <p>Độ ưu tiên</p>
-        <li><%=link_to 'Sản bán chạy nhất',filters_path(:quantity=>'max') %></li>
-        <li><%=link_to 'Đang giảm giá', filters_path(:checkkh=>'1') %></li>
+        <li><%=link_to 'Sản bán chạy nhất' %></li>
+        <li><%=link_to 'Đang giảm giá'%></li>
       </ul>
     </div>
   </div>
