@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821172200) do
+ActiveRecord::Schema.define(version: 20170822072242) do
 
   create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", limit: 100
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170821172200) do
     t.datetime "update_date"
     t.bigint "typeproducts_id"
     t.string "path_name", limit: 50
+    t.string "photo", limit: 100
     t.index ["typeproducts_id"], name: "index_products_on_typeproducts_id"
   end
 

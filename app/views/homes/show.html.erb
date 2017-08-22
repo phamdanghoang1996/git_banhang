@@ -3,7 +3,6 @@
   <div class="row">
     <% @products.each do |item| %>
       <div class="col-md-4">
-
         <div class="text-center">
           <div style="height: 60px;">
             <p id="name-product"> <%= item.name %> </p>
@@ -12,7 +11,7 @@
             <p id="price-product"> <%= item.price %> đồng</p>
           </div>
           <p>
-            <%= link_to 'Mua hàng' , {action: 'show', id: item.id}, class:'buy-product'%>
+            <%= link_to 'Mua hàng', {controller: 'categories', action: 'show', id: item.id }, :class=>'buy-product'%>
           </p>
         </div>
       </div>

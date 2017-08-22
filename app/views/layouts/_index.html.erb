@@ -11,7 +11,7 @@
             <p id="price-product"> <%= item.price %> đồng</p>
           </div>
           <p>
-            <%= link_to 'Mua hàng' , {action: 'show', id: item.id}, class:'buy-product'%>
+            <%= link_to 'Mua hàng' , { home_categories_path(item.id), class:'buy-product'%>
           </p>
         </div>
       </div>

@@ -17,7 +17,7 @@
   <nav id="headerMenu">
     <ul>
       <% @categories.each do |item| %>
-        <li><%= link_to item.name, action: 'show', id: item.id, path: item.path_name%> </li>
+        <li><%= link_to item.name, controller: 'homes', action: 'show', id: item.id %> </li>
       <% end %>
     </ul>
   </nav>
