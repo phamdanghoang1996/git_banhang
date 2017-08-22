@@ -1,0 +1,23 @@
+<div class="col-md-9" id="index">
+  <div class="row">
+    <% @products.each do |item| %>
+      <div class="col-md-4">
+        <%= image_tag item.photo, alt: 'Hinh anh san pham', class:'img-responsive img-product' if item.photo %>
+        <div class="text-center">
+          <div style="height: 60px;">
+            <p id="name-product"> <%= item.name %> </p>
+          </div>
+          <div style="height: 50px;">
+            <p id="price-product"> <%= item.price %> đồng</p>
+          </div>
+          <p>
+            <%= link_to 'Mua hàng' , { home_categories_path(item.id), class:'buy-product'%>
+          </p>
+        </div>
+      </div>
+      <%end%>
+    </div>
+</div>
+<div class="col-md-12 text-center">
+
+</div>

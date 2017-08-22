@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :buyproducts, only: %i[index create]
+  resources :homes, only: %i[index show], path: 'home'
+  resources :categories, only: %i[show]
 end
