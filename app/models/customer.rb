@@ -1,3 +1,3 @@
 class Customer < ApplicationRecord
-  has_many :khachhangs
+  has_many :orders
 end
